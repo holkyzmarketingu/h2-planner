@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>H2 2026 — Plánovač scénářů · #HzM</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=DM+Sans:opsz,wght@9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FBF8F1;
+    --surface: #FFFFFF;
+    --surface-warm: #F4EFE3;
+    --ink: #1F1B16;
+    --ink-soft: #5E574B;
+    --ink-faint: #8B8270;
+    --rule: #E5DDCC;
+    --rule-soft: #EFE9DB;
+    --mini: #3F6B5E;
+    --mini-soft: #DCE7E2;
+    --skol: #B05C40;
+    --skol-soft: #EFDBD0;
+    --consult: #6B5A8C;
+    --consult-soft: #E2DCEC;
+    --ok: #4F7A3A;
+    --ok-soft: #E0EBD3;
+    --tight: #B07A2C;
+    --tight-soft: #F1E2C6;
+    --over: #A0392A;
+    --over-soft: #F1D9D3;
+  }
+  
+  * { box-sizing: border-box; }
+  
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "DM Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 15px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  
+  .page {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 56px 40px 80px;
+  }
+  
+  /* HEADER */
+  .header {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 48px;
+    padding-bottom: 32px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid var(--rule);
+  }
+  
+  .eyebrow {
+    font-family: "DM Sans", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 14px;
+  }
+  
+  h1 {
+    font-family: "Fraunces", Georgia, serif;
+    font-variation-settings: "opsz" 96, "SOFT" 30;
+    font-weight: 400;
+    font-size: 52px;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin: 0 0 16px;
+    color: var(--ink);
+  }
+  
+  h1 em {
+    font-style: italic;
+    font-variation-settings: "opsz" 96, "SOFT" 100;
+    color: var(--mini);
+  }
+  
+  .header-desc {
+    color: var(--ink-soft);
+    max-width: 520px;
+    font-size: 15px;
+  }
+  
+  .targets {
+    align-self: end;
+    text-align: right;
+  }
+  
+  .target-row {
+    display: flex;
+    justify-content: flex-end;
+    gap: 24px;
+    align-items: baseline;
+    margin-bottom: 10px;
+  }
+  
+  .target-label {
+    font-size: 13px;
+    color: var(--ink-soft);
+  }
+  
+  .target-num {
+    font-family: "Fraunces", Georgia, serif;
+    font-variation-settings: "opsz" 36;
+    font-weight: 500;
+    font-size: 26px;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+  
+  .target-num.mini { color: var(--mini); }
+  .target-num.skol { color: var(--skol); }
+  
+  /* SECTION HEADERS */
+  .section {
+    margin-bottom: 48px;
+  }
+  
+  h2 {
+    font-family: "Fraunces", Georgia, serif;
+    font-variation-settings: "opsz" 48, "SOFT" 30;
+    font-weight: 400;
+    font-size: 28px;
+    letter-spacing: -0.01em;
+    margin: 0 0 24px;
+    color: var(--ink);
+  }
+  
+  h2 .num {
+    font-family: "DM Sans", sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-right: 16px;
+    vertical-align: 0.2em;
+  }
+  
+  /* PER-EVENT ECONOMICS CARDS */
+  .economics {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+  }
+  
+  .econ-card {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 24px 26px;
+    position: relative;
+  }
+  
+  .econ-card.mini { border-top: 3px solid var(--mini); }
+  .econ-card.skol { border-top: 3px solid var(--skol); }
+  .econ-card.consult { border-top: 3px solid var(--consult); }
+  
+  .econ-name {
+    font-family: "Fraunces", Georgia, serif;
+    font-variation-settings: "opsz" 24;
+    font-weight: 500;
+    font-size: 20px;
+    margin: 0 0 4px;
+  }
+  
+  .econ-format {
+    font-size: 12px;
+    color: var(--ink-faint);
+    margin-bottom: 18px;
+    letter-spacing: 0.02em;
+  }
+  
+  .econ-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 6px 0;
+    font-size: 13px;
+  }
+  
+  .econ-row .k { color: var(--ink-soft); }
+  .econ-row .v { font-weight: 500; color: var(--ink); }
+  
+  .econ-headline {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid var(--rule-soft);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  
+  .econ-headline .k {
+    font-size: 12px;
+    color: var(--ink-faint);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  
+  .econ-headline .v {
+    font-family: "Fraunces", Georgia, serif;
+    font-variation-settings: "opsz" 36;
+    font-weight: 500;
+    font-size: 26px;
+    letter-spacing: -0.01em;
+  }
+  
+  .econ-card.mini .econ-headline .v { color: var(--mini); }
+  .econ-card.skol .econ-headline .v { color: var(--skol); }
+  .econ-card.consult .econ-headline .v { color: var(--consult); }
+  
+  /* CONTROLS */
+  .controls {
+    background: var(--surface-warm);
+    border-radius: 4px;
+    padding: 36px 40px 32px;
+  }
+  
+  .control-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 36px;
+    margin-bottom: 28px;
+  }
+  
+  .control {
+    display: block;
+  }
+  
+  .control-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 14px;
+  }
+  
+  .control-label {
+    font-size: 13px;
+    color: var(--ink-soft);
+    letter-spacing: 0.01em;
+  }
+  
+  .control-value {
+    font-family: "Fraunces", Georgia, serif;
+    font-variation-settings: "opsz" 36;
+    font-weight: 500;
+    font-size: 22px;
+    color: var(--ink);
+  }
+  
+  .control-value .of {
+    font-size: 13px;
+    color: var(--ink-faint);
+    font-family: "DM Sans", sans-serif;
+    font-weight: 400;
+  }
+  
+  /* CUSTOM SLIDER */
+  input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 4px;
+    background: var(--rule);
+    border-radius: 2px;
+    outline: none;
+    margin: 8px 0 4px;
+  }
+  
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--ink);
+    cursor: pointer;
+    border: 3px solid var(--bg);
+    box-shadow: 0 0 0 1px var(--ink);
+    transition: transform 0.1s;
+  }
+  
+  input[type="range"]::-webkit-slider-thumb:hover {
+    transform: scale(1.1);
+  }
+  
+  input[type="range"]::-moz-range-thumb {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--ink);
+    cursor: pointer;
+    border: 3px solid var(--bg);
+    box-shadow: 0 0 0 1px var(--ink);
+  }
+  
+  .slider-foot {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: var(--ink-faint);
+    letter-spacing: 0.04em;
+  }
+  
+  .slider-per-event {
+    margin-top: 8px;
+    font-size: 12px;
+    color: var(--ink-soft);
+    font-style: italic;
+  }
+  
+  /* PRESETS */
+  .presets {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+    align-items: center;
+  }
+  
+  .presets-label {
+    font-size: 12px;
+    color: var(--ink-faint);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-right: 8px;
+  }
+  
+  .preset-btn {
+    background: transparent;
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    padding: 7px 16px;
+    font-family: inherit;
+    font-size: 13px;
+    color: var(--ink);
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  
+  .preset-btn:hover {
+    background: var(--surface);
+    border-color: var(--ink-faint);
+  }
+  
+  .preset-btn.active {
+    background: var(--ink);
+    color: var(--bg);
+    border-color: var(--ink);
+  }
+  
+  /* OUTPUT SUMMARY */
+  .summary {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+  
+  .sum-card {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 26px 28px;
+  }
+  
+  .sum-card.mini { border-top: 3px solid var(--mini); }
+  .sum-card.skol { border-top: 3px solid var(--skol); }
+  
+  .sum-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 20px;
+  }
+  
+  .sum-title {
+    font-family: "Fraunces", Georgia, serif;
+    font-variation-settings: "opsz" 24;
+    font-weight: 500;
+    font-size: 18px;
+  }
+  
+  .sum-target {
+    font-size: 13px;
+    color: var(--ink-faint);
+  }
+  
+  .sum-big {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 4px;
+  }
+  
+  .sum-big-num {
+    font-family: "Fraunces", Georgia, serif;
+    font-variation-settings: "opsz" 144, "SOFT" 50;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+  }
+  
+  .sum-card.mini .sum-big-num { color: var(--mini); }
+  .sum-card.skol .sum-big-num { color: var(--skol); }
+  
+  .sum-big-unit {
+    font-size: 16px;
+    color: var(--ink-soft);
+  }
+  
+  .sum-peak {
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin-bottom: 22px;
+  }
+  
+  .util-block {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid var(--rule-soft);
+  }
+  
+  .util-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 8px;
+    font-size: 12px;
+  }
+  
+  .util-label {
+    color: var(--ink-faint);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  
+  .util-pct {
+    font-weight: 500;
+    font-size: 14px;
+  }
+  
+  .util-bar-bg {
+    height: 6px;
+    background: var(--rule-soft);
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 8px;
+  }
+  
+  .util-bar-fill {
+    height: 100%;
+    border-radius: 3px;
+    transition: width 0.2s, background 0.2s;
+  }
+  
+  .util-verdict {
+    font-size: 12px;
+    font-style: italic;
+  }
+  
+  .status-ok { color: var(--ok); }
+  .status-tight { color: var(--tight); }
+  .status-over { color: var(--over); }
+  
+  /* MONTHLY TABLE */
+  .monthly {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  
+  thead th {
+    background: var(--surface-warm);
+    font-family: "DM Sans", sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    text-align: right;
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--rule);
+  }
+  
+  thead th:first-child {
+    text-align: left;
+  }
+  
+  tbody td {
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--rule-soft);
+    text-align: right;
+    vertical-align: middle;
+  }
+  
+  tbody td:first-child {
+    text-align: left;
+    font-weight: 500;
+  }
+  
+  tbody tr:last-child td {
+    border-bottom: none;
+  }
+  
+  tbody tr.peak {
+    background: var(--surface-warm);
+  }
+  
+  tbody tr.peak td:first-child::after {
+    content: " ●";
+    color: var(--mini);
+    font-size: 11px;
+    margin-left: 4px;
+  }
+  
+  tbody tr.total {
+    border-top: 1px solid var(--rule);
+    background: var(--rule-soft);
+  }
+  
+  tbody tr.total td {
+    font-weight: 500;
+    border-bottom: none;
+    padding: 16px 20px;
+  }
+  
+  .col-target { color: var(--ink-soft); font-variant-numeric: tabular-nums; }
+  .col-events {
+    font-family: "Fraunces", Georgia, serif;
+    font-variation-settings: "opsz" 24;
+    font-weight: 500;
+    font-size: 18px;
+    color: var(--ink);
+    font-variant-numeric: tabular-nums;
+  }
+  
+  /* NOTES */
+  .notes {
+    margin-top: 48px;
+    padding-top: 28px;
+    border-top: 1px solid var(--rule);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    font-size: 13px;
+    color: var(--ink-soft);
+    line-height: 1.7;
+  }
+  
+  .notes h3 {
+    font-family: "Fraunces", Georgia, serif;
+    font-variation-settings: "opsz" 18;
+    font-weight: 500;
+    font-size: 15px;
+    color: var(--ink);
+    margin: 0 0 8px;
+  }
+  
+  .notes p { margin: 0 0 10px; }
+  
+  .notes .ki {
+    color: var(--ink);
+    font-weight: 500;
+  }
+  
+  /* FOOTER */
+  .footer {
+    margin-top: 60px;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: var(--ink-faint);
+    letter-spacing: 0.04em;
+  }
+  
+  /* RESPONSIVE */
+  @media (max-width: 800px) {
+    .page { padding: 32px 20px 60px; }
+    .header { grid-template-columns: 1fr; gap: 24px; }
+    .targets { text-align: left; align-self: start; }
+    .target-row { justify-content: flex-start; }
+    h1 { font-size: 36px; }
+    .economics { grid-template-columns: 1fr; }
+    .control-grid { grid-template-columns: 1fr; gap: 24px; }
+    .summary { grid-template-columns: 1fr; }
+    .sum-big-num { font-size: 48px; }
+    .notes { grid-template-columns: 1fr; gap: 20px; }
+    .controls { padding: 24px 20px; }
+    thead th, tbody td { padding: 10px 12px; font-size: 13px; }
+  }
+  
+  /* PRINT */
+  @media print {
+    body { background: white; }
+    .page { padding: 0; }
+    .controls { background: #F5F0E5; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="header">
+    <div>
+      <div class="eyebrow">#HzM · Plánovač H2 2026</div>
+      <h1>Kolik <em>kohort</em> a <em>termínů</em> potřebujeme?</h1>
+      <p class="header-desc">Interaktivní model pro plánování Miniakademie a Školení v druhé polovině roku 2026. <strong>Cesta B:</strong> Mini cíl navýšen na 3,3 M, Škol cíl snížen na 3,8 M (celkem 7,1 M). Léto má strop 3 Mini + 13 Škol měsíčně; září–polovina prosince absorbuje zbytek. Posuvníky simulují průměrnou obsazenost a počet konzultací.</p>
+    </div>
+    <div class="targets">
+      <div class="target-row">
+        <span class="target-label">Miniakademie cíl H2</span>
+        <span class="target-num mini">3 300 000 Kč</span>
+      </div>
+      <div class="target-row">
+        <span class="target-label">Školení cíl H2</span>
+        <span class="target-num skol">3 800 000 Kč</span>
+      </div>
+      <div class="target-row" style="margin-top: 14px;">
+        <span class="target-label">PM kapacita strop</span>
+        <span class="target-label" style="color: var(--ink);">46 kohort · 243 termínů</span>
+      </div>
+    </div>
+  </header>
+
+  <section class="section">
+    <h2><span class="num">01</span>Ekonomika eventu</h2>
+    <div class="economics">
+      <div class="econ-card mini">
+        <div class="econ-name">Miniakademie</div>
+        <div class="econ-format">4 lekce · kapacita 45 míst</div>
+        <div class="econ-row"><span class="k">Cena za vstupenku</span><span class="v">3 000 Kč</span></div>
+        <div class="econ-row"><span class="k">Průměrná obsazenost</span><span class="v" id="econMiniFill">30</span></div>
+        <div class="econ-headline">
+          <span class="k">Výnos / kohorta</span>
+          <span class="v" id="econMiniRev">90 000 Kč</span>
+        </div>
+      </div>
+      <div class="econ-card skol">
+        <div class="econ-name">Školení</div>
+        <div class="econ-format">1 lekce · kapacita 90 míst</div>
+        <div class="econ-row"><span class="k">Cena za vstupenku</span><span class="v">600 Kč</span></div>
+        <div class="econ-row"><span class="k">Průměrná obsazenost</span><span class="v" id="econSkolFill">45</span></div>
+        <div class="econ-headline">
+          <span class="k">Výnos / termín</span>
+          <span class="v" id="econSkolRev">27 000 Kč</span>
+        </div>
+      </div>
+      <div class="econ-card consult">
+        <div class="econ-name">Konzultace</div>
+        <div class="econ-format">75 min · 1:1 s lektorkou</div>
+        <div class="econ-row"><span class="k">Cena za konzultaci</span><span class="v">5 000 Kč</span></div>
+        <div class="econ-row"><span class="k">Počet za měsíc</span><span class="v" id="econConsultN">10</span></div>
+        <div class="econ-headline">
+          <span class="k">Výnos / měsíc</span>
+          <span class="v" id="econConsultRev">50 000 Kč</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2><span class="num">02</span>Scénář</h2>
+    <div class="controls">
+      <div class="control-grid">
+        <div class="control">
+          <div class="control-head">
+            <span class="control-label">Miniakademie · prům. obsazenost</span>
+            <span class="control-value"><span id="miniFillVal">30</span><span class="of"> / 45</span></span>
+          </div>
+          <input type="range" id="miniFill" min="15" max="45" step="1" value="30">
+          <div class="slider-foot"><span>15</span><span>45 (cap)</span></div>
+          <div class="slider-per-event">Výnos / kohorta: <span id="miniPerEvent">90 000 Kč</span></div>
+        </div>
+        <div class="control">
+          <div class="control-head">
+            <span class="control-label">Školení · prům. obsazenost</span>
+            <span class="control-value"><span id="skolFillVal">45</span><span class="of"> / 90</span></span>
+          </div>
+          <input type="range" id="skolFill" min="20" max="90" step="1" value="45">
+          <div class="slider-foot"><span>20</span><span>90 (cap)</span></div>
+          <div class="slider-per-event">Výnos / termín: <span id="skolPerEvent">27 000 Kč</span></div>
+        </div>
+        <div class="control">
+          <div class="control-head">
+            <span class="control-label">Konzultace / měsíc</span>
+            <span class="control-value"><span id="consultVal">10</span><span class="of"> / měs</span></span>
+          </div>
+          <input type="range" id="consult" min="0" max="30" step="1" value="10">
+          <div class="slider-foot"><span>0</span><span>30</span></div>
+          <div class="slider-per-event">H2 celkem: <span id="consultH2">300 000 Kč</span></div>
+        </div>
+      </div>
+      <div class="presets">
+        <span class="presets-label">Přednastavené scénáře</span>
+        <button class="preset-btn" data-mini="20" data-skol="28" data-consult="10">Status quo · 20 / 28</button>
+        <button class="preset-btn" data-mini="25" data-skol="35" data-consult="10">Conservative · 25 / 35</button>
+        <button class="preset-btn active" data-mini="30" data-skol="45" data-consult="10">Base · 30 / 45</button>
+        <button class="preset-btn" data-mini="35" data-skol="60" data-consult="15">Stretch · 35 / 60</button>
+        <button class="preset-btn" data-mini="45" data-skol="90" data-consult="20">At-cap · 45 / 90</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2><span class="num">03</span>Co musíme připravit</h2>
+    <div class="summary">
+      <div class="sum-card mini">
+        <div class="sum-head">
+          <span class="sum-title">Miniakademie kohorty</span>
+          <span class="sum-target">cíl 3 300 000 Kč</span>
+        </div>
+        <div class="sum-big">
+          <span class="sum-big-num" id="miniTotal">34</span>
+          <span class="sum-big-unit">kohort H2</span>
+        </div>
+        <div class="sum-peak">Maximum v měsíci: <strong id="miniPeak">8</strong> kohort</div>
+        <div class="util-block">
+          <div class="util-head">
+            <span class="util-label">PM kapacita využita</span>
+            <span class="util-pct" id="miniUtilPct">74 %</span>
+          </div>
+          <div class="util-bar-bg"><div class="util-bar-fill" id="miniUtilBar" style="width: 74%; background: var(--ok);"></div></div>
+          <div class="util-verdict status-ok" id="miniVerdict">V kapacitě (46 strop)</div>
+        </div>
+      </div>
+      <div class="sum-card skol">
+        <div class="sum-head">
+          <span class="sum-title">Školení termíny</span>
+          <span class="sum-target">cíl 3 800 000 Kč</span>
+        </div>
+        <div class="sum-big">
+          <span class="sum-big-num" id="skolTotal">141</span>
+          <span class="sum-big-unit">termínů H2</span>
+        </div>
+        <div class="sum-peak">Maximum v měsíci: <strong id="skolPeak">36</strong> termínů</div>
+        <div class="util-block">
+          <div class="util-head">
+            <span class="util-label">PM kapacita využita</span>
+            <span class="util-pct" id="skolUtilPct">58 %</span>
+          </div>
+          <div class="util-bar-bg"><div class="util-bar-fill" id="skolUtilBar" style="width: 58%; background: var(--ok);"></div></div>
+          <div class="util-verdict status-ok" id="skolVerdict">V kapacitě (243 strop)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2><span class="num">04</span>Měsíční rozpad</h2>
+    <div class="monthly">
+      <table>
+        <thead>
+          <tr>
+            <th>Měsíc</th>
+            <th>Mini cíl</th>
+            <th>Kohorty</th>
+            <th>Škol cíl</th>
+            <th>Termíny</th>
+            <th>Konz.</th>
+          </tr>
+        </thead>
+        <tbody id="monthlyBody"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <div class="notes">
+    <div>
+      <h3>Předpoklady modelu</h3>
+      <p><span class="ki">Příjem podle data objednávky</span> — výnos se počítá v měsíci, kdy přijde objednávka, ne kdy se event koná. Mediánový lead time je 6–7 dnů.</p>
+      <p><span class="ki">PM kapacitní strop</span> nastavený na 2× rychlost H1 2026 (17 kohort + 89 termínů za 4,4 měsíce) projektovaná do 6 měsíců = 46 kohort, 243 termínů.</p>
+      <p><span class="ki">Konzultace</span> přispívají do cíle Školení, distribuováno rovnoměrně po měsících.</p>
+    </div>
+    <div>
+      <h3>Provozní pravidla</h3>
+      <p><span class="ki">Cesta B</span> — Mini cíl 3,3 M (z 3,0 M), Škol cíl 3,8 M (z 4,1 M). Celkový H2 cíl zachován na 7,1 M Kč. Cíl: snížit tlak na Sep–Nov Škol pod 30 termínů/měsíc.</p>
+      <p><span class="ki">Letní strop červenec–srpen</span> — max 3 Miniakademie a 12–14 Školení měsíčně (270 k Mini, 400 k Škol).</p>
+      <p><span class="ki">Stop date 17. 12.</span> — všechny eventy musí začít do 17. 12., aby zachytily celé prodejní okno před firemní dovolenou. Prosinec modelujeme jako poloviční měsíc.</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>#HolkyzMarketingu · EDU tým</span>
+    <span>Verze: 13. 5. 2026 · Cesta B (Mini 3,3 M / Škol 3,8 M) · interní pracovní materiál</span>
+  </div>
+
+</div>
+
+<script>
+  const MINI_PRICE = 3000;
+  const SKOL_PRICE = 600;
+  const CONSULT_PRICE = 5000;
+  const MINI_PM_CAP = 46;
+  const SKOL_PM_CAP = 243;
+  
+  const targets = [
+    { name: 'červenec', mini: 270, skol: 400, peak: false, summer: true },
+    { name: 'srpen', mini: 270, skol: 400, peak: false, summer: true },
+    { name: 'září', mini: 790, skol: 860, peak: false },
+    { name: 'říjen', mini: 790, skol: 860, peak: false },
+    { name: 'listopad', mini: 790, skol: 860, peak: false },
+    { name: 'prosinec (do 17.)', mini: 395, skol: 430, peak: false }
+  ];
+  
+  const fmt = n => n.toLocaleString('cs-CZ').replace(/\u00a0/g, ' ').replace(/,/g, ' ');
+  
+  function statusColor(util) {
+    if (util < 75) return 'var(--ok)';
+    if (util < 100) return 'var(--tight)';
+    return 'var(--over)';
+  }
+  
+  function statusClass(util) {
+    if (util < 75) return 'status-ok';
+    if (util < 100) return 'status-tight';
+    return 'status-over';
+  }
+  
+  function statusText(util, cap) {
+    if (util < 75) return 'V kapacitě (' + cap + ' strop)';
+    if (util < 100) return 'Těsně pod stropem — málo rezervy';
+    return 'Nad kapacitou — potřeba vyšší obsazenost nebo méně eventů';
+  }
+  
+  function recompute() {
+    const miniFill = +document.getElementById('miniFill').value;
+    const skolFill = +document.getElementById('skolFill').value;
+    const consultPerMonth = +document.getElementById('consult').value;
+    
+    document.getElementById('miniFillVal').textContent = miniFill;
+    document.getElementById('skolFillVal').textContent = skolFill;
+    document.getElementById('consultVal').textContent = consultPerMonth;
+    
+    const miniRevPer = miniFill * MINI_PRICE;
+    const skolRevPer = skolFill * SKOL_PRICE;
+    const consultRevPerMonth = consultPerMonth * CONSULT_PRICE;
+    
+    document.getElementById('econMiniFill').textContent = miniFill;
+    document.getElementById('econSkolFill').textContent = skolFill;
+    document.getElementById('econConsultN').textContent = consultPerMonth;
+    document.getElementById('econMiniRev').textContent = fmt(miniRevPer) + ' Kč';
+    document.getElementById('econSkolRev').textContent = fmt(skolRevPer) + ' Kč';
+    document.getElementById('econConsultRev').textContent = fmt(consultRevPerMonth) + ' Kč';
+    
+    document.getElementById('miniPerEvent').textContent = fmt(miniRevPer) + ' Kč';
+    document.getElementById('skolPerEvent').textContent = fmt(skolRevPer) + ' Kč';
+    document.getElementById('consultH2').textContent = fmt(consultRevPerMonth * 6) + ' Kč';
+    
+    let miniTotal = 0, skolTotal = 0, miniPeak = 0, skolPeak = 0;
+    const tbody = document.getElementById('monthlyBody');
+    tbody.innerHTML = '';
+    
+    let miniRevSum = 0, skolRevSum = 0;
+    
+    targets.forEach(t => {
+      const miniNeed = Math.ceil((t.mini * 1000) / miniRevPer);
+      const skolRevAfter = Math.max(0, t.skol * 1000 - consultRevPerMonth);
+      const skolNeed = Math.ceil(skolRevAfter / skolRevPer);
+      miniTotal += miniNeed;
+      skolTotal += skolNeed;
+      miniRevSum += miniNeed * miniRevPer;
+      skolRevSum += skolNeed * skolRevPer + consultRevPerMonth;
+      // Track max across all months (no peak concept in flat distribution)
+      miniPeak = Math.max(miniPeak, miniNeed);
+      skolPeak = Math.max(skolPeak, skolNeed);
+      const summerTag = t.summer ? ' <span style="color: var(--ink-faint); font-size: 11px; font-weight: 400;">léto</span>' : '';
+      const rowStyle = t.summer ? 'style="background: rgba(255,235,180,0.15);"' : '';
+      tbody.innerHTML += '<tr ' + rowStyle + '>' +
+        '<td>' + t.name + summerTag + '</td>' +
+        '<td class="col-target">' + t.mini + ' k</td>' +
+        '<td class="col-events">' + miniNeed + '</td>' +
+        '<td class="col-target">' + t.skol + ' k</td>' +
+        '<td class="col-events">' + skolNeed + '</td>' +
+        '<td class="col-target">' + consultPerMonth + '</td>' +
+        '</tr>';
+    });
+    
+    tbody.innerHTML += '<tr class="total">' +
+      '<td>Celkem H2</td>' +
+      '<td class="col-target">3 300 k</td>' +
+      '<td class="col-events">' + miniTotal + '</td>' +
+      '<td class="col-target">3 800 k</td>' +
+      '<td class="col-events">' + skolTotal + '</td>' +
+      '<td class="col-target">' + (consultPerMonth * 6) + '</td>' +
+      '</tr>';
+    
+    const miniUtil = Math.round((miniTotal / MINI_PM_CAP) * 100);
+    const skolUtil = Math.round((skolTotal / SKOL_PM_CAP) * 100);
+    
+    document.getElementById('miniTotal').textContent = miniTotal;
+    document.getElementById('skolTotal').textContent = skolTotal;
+    document.getElementById('miniPeak').textContent = miniPeak;
+    document.getElementById('skolPeak').textContent = skolPeak;
+    document.getElementById('miniUtilPct').textContent = miniUtil + ' %';
+    document.getElementById('skolUtilPct').textContent = skolUtil + ' %';
+    
+    const miniBar = document.getElementById('miniUtilBar');
+    miniBar.style.width = Math.min(100, miniUtil) + '%';
+    miniBar.style.background = statusColor(miniUtil);
+    
+    const skolBar = document.getElementById('skolUtilBar');
+    skolBar.style.width = Math.min(100, skolUtil) + '%';
+    skolBar.style.background = statusColor(skolUtil);
+    
+    const miniV = document.getElementById('miniVerdict');
+    miniV.textContent = statusText(miniUtil, MINI_PM_CAP);
+    miniV.className = 'util-verdict ' + statusClass(miniUtil);
+    
+    const skolV = document.getElementById('skolVerdict');
+    skolV.textContent = statusText(skolUtil, SKOL_PM_CAP);
+    skolV.className = 'util-verdict ' + statusClass(skolUtil);
+    
+    document.querySelectorAll('.preset-btn').forEach(btn => {
+      const isActive = +btn.dataset.mini === miniFill && +btn.dataset.skol === skolFill && +btn.dataset.consult === consultPerMonth;
+      btn.classList.toggle('active', isActive);
+    });
+  }
+  
+  ['miniFill', 'skolFill', 'consult'].forEach(id => {
+    document.getElementById(id).addEventListener('input', recompute);
+  });
+  
+  document.querySelectorAll('.preset-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.getElementById('miniFill').value = btn.dataset.mini;
+      document.getElementById('skolFill').value = btn.dataset.skol;
+      document.getElementById('consult').value = btn.dataset.consult;
+      recompute();
+    });
+  });
+  
+  recompute();
+</script>
+</body>
+</html>
