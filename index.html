@@ -6,29 +6,31 @@
 <title>H2 2026 — Plánovač scénářů · #HzM</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=DM+Sans:opsz,wght@9..40,400;9..40,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #FBF8F1;
+    --bg: #FFFBEE;
     --surface: #FFFFFF;
-    --surface-warm: #F4EFE3;
-    --ink: #1F1B16;
-    --ink-soft: #5E574B;
-    --ink-faint: #8B8270;
-    --rule: #E5DDCC;
-    --rule-soft: #EFE9DB;
-    --mini: #3F6B5E;
-    --mini-soft: #DCE7E2;
-    --skol: #B05C40;
-    --skol-soft: #EFDBD0;
-    --consult: #6B5A8C;
-    --consult-soft: #E2DCEC;
-    --ok: #4F7A3A;
-    --ok-soft: #E0EBD3;
-    --tight: #B07A2C;
-    --tight-soft: #F1E2C6;
-    --over: #A0392A;
-    --over-soft: #F1D9D3;
+    --surface-warm: #FDDCE7;
+    --ink: #37021C;
+    --ink-soft: #6B3B4C;
+    --ink-faint: #9A7080;
+    --rule: #F0CFDA;
+    --rule-soft: #F8E0EA;
+    --mini: #828EF9;
+    --mini-soft: #E1E9FF;
+    --skol: #3A731F;
+    --skol-soft: #D0F9F5;
+    --consult: #FF8DF4;
+    --consult-soft: #FDDCE7;
+    --ok: #3A731F;
+    --ok-soft: #D0F9F5;
+    --tight: #C97A5C;
+    --tight-soft: #FFF0BC;
+    --over: #A71D4F;
+    --over-soft: #FDDCE7;
+    --akad: #8A4A63;
+    --akad-soft: #EADBE1;
   }
   
   * { box-sizing: border-box; }
@@ -38,7 +40,7 @@
     padding: 0;
     background: var(--bg);
     color: var(--ink);
-    font-family: "DM Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
     font-size: 15px;
     line-height: 1.55;
     -webkit-font-smoothing: antialiased;
@@ -62,7 +64,7 @@
   }
   
   .eyebrow {
-    font-family: "DM Sans", sans-serif;
+    font-family: "Plus Jakarta Sans", sans-serif;
     font-size: 12px;
     font-weight: 500;
     letter-spacing: 0.14em;
@@ -72,8 +74,7 @@
   }
   
   h1 {
-    font-family: "Fraunces", Georgia, serif;
-    font-variation-settings: "opsz" 96, "SOFT" 30;
+    font-family: "Plus Jakarta Sans", sans-serif;
     font-weight: 400;
     font-size: 52px;
     line-height: 1.05;
@@ -84,7 +85,6 @@
   
   h1 em {
     font-style: italic;
-    font-variation-settings: "opsz" 96, "SOFT" 100;
     color: var(--mini);
   }
   
@@ -113,8 +113,7 @@
   }
   
   .target-num {
-    font-family: "Fraunces", Georgia, serif;
-    font-variation-settings: "opsz" 36;
+    font-family: "Plus Jakarta Sans", sans-serif;
     font-weight: 500;
     font-size: 26px;
     color: var(--ink);
@@ -123,6 +122,7 @@
   
   .target-num.mini { color: var(--mini); }
   .target-num.skol { color: var(--skol); }
+  .target-num.akad { color: var(--akad); }
   
   /* SECTION HEADERS */
   .section {
@@ -130,8 +130,7 @@
   }
   
   h2 {
-    font-family: "Fraunces", Georgia, serif;
-    font-variation-settings: "opsz" 48, "SOFT" 30;
+    font-family: "Plus Jakarta Sans", sans-serif;
     font-weight: 400;
     font-size: 28px;
     letter-spacing: -0.01em;
@@ -140,7 +139,7 @@
   }
   
   h2 .num {
-    font-family: "DM Sans", sans-serif;
+    font-family: "Plus Jakarta Sans", sans-serif;
     font-size: 13px;
     font-weight: 500;
     letter-spacing: 0.14em;
@@ -170,8 +169,7 @@
   .econ-card.consult { border-top: 3px solid var(--consult); }
   
   .econ-name {
-    font-family: "Fraunces", Georgia, serif;
-    font-variation-settings: "opsz" 24;
+    font-family: "Plus Jakarta Sans", sans-serif;
     font-weight: 500;
     font-size: 20px;
     margin: 0 0 4px;
@@ -212,8 +210,7 @@
   }
   
   .econ-headline .v {
-    font-family: "Fraunces", Georgia, serif;
-    font-variation-settings: "opsz" 36;
+    font-family: "Plus Jakarta Sans", sans-serif;
     font-weight: 500;
     font-size: 26px;
     letter-spacing: -0.01em;
@@ -255,8 +252,7 @@
   }
   
   .control-value {
-    font-family: "Fraunces", Georgia, serif;
-    font-variation-settings: "opsz" 36;
+    font-family: "Plus Jakarta Sans", sans-serif;
     font-weight: 500;
     font-size: 22px;
     color: var(--ink);
@@ -265,7 +261,7 @@
   .control-value .of {
     font-size: 13px;
     color: var(--ink-faint);
-    font-family: "DM Sans", sans-serif;
+    font-family: "Plus Jakarta Sans", sans-serif;
     font-weight: 400;
   }
   
@@ -381,6 +377,7 @@
   
   .sum-card.mini { border-top: 3px solid var(--mini); }
   .sum-card.skol { border-top: 3px solid var(--skol); }
+  .sum-card.akad { border-top: 3px solid var(--akad); }
   
   .sum-head {
     display: flex;
@@ -390,8 +387,7 @@
   }
   
   .sum-title {
-    font-family: "Fraunces", Georgia, serif;
-    font-variation-settings: "opsz" 24;
+    font-family: "Plus Jakarta Sans", sans-serif;
     font-weight: 500;
     font-size: 18px;
   }
@@ -409,8 +405,7 @@
   }
   
   .sum-big-num {
-    font-family: "Fraunces", Georgia, serif;
-    font-variation-settings: "opsz" 144, "SOFT" 50;
+    font-family: "Plus Jakarta Sans", sans-serif;
     font-weight: 400;
     font-size: 64px;
     line-height: 1;
@@ -496,7 +491,7 @@
   
   thead th {
     background: var(--surface-warm);
-    font-family: "DM Sans", sans-serif;
+    font-family: "Plus Jakarta Sans", sans-serif;
     font-weight: 500;
     font-size: 12px;
     letter-spacing: 0.1em;
@@ -551,8 +546,7 @@
   
   .col-target { color: var(--ink-soft); font-variant-numeric: tabular-nums; }
   .col-events {
-    font-family: "Fraunces", Georgia, serif;
-    font-variation-settings: "opsz" 24;
+    font-family: "Plus Jakarta Sans", sans-serif;
     font-weight: 500;
     font-size: 18px;
     color: var(--ink);
@@ -573,8 +567,7 @@
   }
   
   .notes h3 {
-    font-family: "Fraunces", Georgia, serif;
-    font-variation-settings: "opsz" 18;
+    font-family: "Plus Jakarta Sans", sans-serif;
     font-weight: 500;
     font-size: 15px;
     color: var(--ink);
@@ -620,42 +613,289 @@
   @media print {
     body { background: white; }
     .page { padding: 0; }
-    .controls { background: #F5F0E5; }
+    .controls { background: #FDDCE7; }
+    .tabs { display: none; }
+    .tab-content { display: block !important; }
   }
+
+  /* TABS */
+  .tabs {
+    display: flex;
+    gap: 4px;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 40px;
+    margin-top: -20px;
+  }
+  .tab-btn {
+    background: transparent;
+    border: none;
+    padding: 14px 20px;
+    font-family: inherit;
+    font-size: 14px;
+    color: var(--ink-faint);
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+    transition: all 0.15s ease;
+    letter-spacing: 0;
+  }
+  .tab-btn:hover { color: var(--ink-soft); }
+  .tab-btn.active {
+    color: var(--ink);
+    border-bottom-color: var(--ink);
+    font-weight: 500;
+  }
+  .tab-content { display: none; }
+  .tab-content.active { display: block; }
+
+  /* VERTIKÁLY TABLE */
+  .vert-table input[type="number"] {
+    width: 90px;
+    padding: 6px 10px;
+    font-family: inherit;
+    font-size: 13px;
+    color: var(--ink);
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    text-align: right;
+    -moz-appearance: textfield;
+  }
+  .vert-table input[type="number"]:focus {
+    outline: none;
+    border-color: var(--mini);
+    box-shadow: 0 0 0 3px var(--mini-soft);
+  }
+  .vert-table input[type="number"]::-webkit-outer-spin-button,
+  .vert-table input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  .vert-table .owner-tag {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0;
+  }
+  .vert-table .vert-highlight {
+    background: var(--mini-soft);
+  }
+  .vert-table .vert-highlight td {
+    font-weight: 500;
+  }
+
+  /* PRICE INPUTS */
+  .price-input {
+    width: 76px;
+    padding: 3px 7px;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink);
+    background: var(--surface-warm);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    text-align: right;
+    -moz-appearance: textfield;
+  }
+  .price-input:focus {
+    outline: none;
+    border-color: var(--mini);
+    box-shadow: 0 0 0 2px var(--mini-soft);
+  }
+  .price-input::-webkit-outer-spin-button,
+  .price-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  .econ-card.skol .price-input:focus {
+    border-color: var(--skol);
+    box-shadow: 0 0 0 2px var(--skol-soft);
+  }
+  .econ-card.consult .price-input:focus {
+    border-color: var(--consult);
+    box-shadow: 0 0 0 2px var(--consult-soft);
+  }
+  .price-hint {
+    font-size: 12px;
+    color: var(--ink-faint);
+    font-style: italic;
+    margin: -12px 0 20px;
+  }
+
+  /* CAPACITY COLORS IN MONTHLY TABLE */
+  .cap-ok { color: var(--ok); }
+  .cap-tight { color: var(--tight); }
+  .cap-over { color: var(--over); }
+  .cap-ref {
+    color: var(--ink-faint);
+    font-size: 12px;
+    font-weight: 400;
+  }
+
+  /* RISK CONTROL GRID */
+  .control-grid.risk {
+    grid-template-columns: 1fr 1fr 1.1fr;
+    margin-top: 4px;
+    padding-top: 28px;
+    border-top: 1px solid var(--rule);
+  }
+  .risk-summary-box {
+    font-size: 13px;
+    color: var(--ink-soft);
+    line-height: 1.6;
+    align-self: center;
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 14px 16px;
+  }
+  .risk-summary-box strong { color: var(--ink); font-weight: 600; }
+  .risk-summary-box .rsb-line { margin-bottom: 4px; }
+  .risk-summary-box .rsb-line:last-child { margin-bottom: 0; }
+
+  /* OWNER FILTER */
+  .owner-filter {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+    align-items: center;
+  }
+  .owner-filter .filter-label {
+    font-size: 12px;
+    color: var(--ink-faint);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-right: 4px;
+  }
+  .filter-btn {
+    background: transparent;
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    padding: 6px 14px;
+    font-family: inherit;
+    font-size: 13px;
+    color: var(--ink);
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .filter-btn:hover { border-color: var(--ink-faint); }
+  .filter-btn.active {
+    background: var(--ink);
+    color: var(--bg);
+    border-color: var(--ink);
+  }
+  .vert-row-hidden { display: none; }
+
+  /* AUTUMN AKADEMIE CARD */
+  .akad-table { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 4px; }
+  .akad-table thead th {
+    text-align: right; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--ink-faint); font-weight: 500; padding: 8px 10px; border-bottom: 1px solid var(--rule);
+  }
+  .akad-table thead th:first-child { text-align: left; }
+  .akad-table tbody td {
+    padding: 9px 10px; border-bottom: 1px solid var(--rule-soft); text-align: right; vertical-align: middle;
+  }
+  .akad-table tbody td:first-child { text-align: left; font-weight: 500; }
+  .akad-table tbody tr:last-child td { border-bottom: none; }
+  .akad-table tr.akad-in-target { background: var(--akad-soft); }
+  .akad-table input[type="number"] {
+    width: 74px; padding: 5px 8px; font-family: inherit; font-size: 13px; color: var(--ink);
+    background: var(--surface-warm); border: 1px solid var(--rule); border-radius: 4px;
+    text-align: right; -moz-appearance: textfield;
+  }
+  .akad-table input[type="number"]:focus {
+    outline: none; border-color: var(--akad); box-shadow: 0 0 0 2px var(--akad-soft);
+  }
+  .akad-table input[type="number"]::-webkit-outer-spin-button,
+  .akad-table input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+  .akad-rev {
+    font-family: "Fraunces", Georgia, serif; font-variation-settings: "opsz" 24;
+    font-weight: 500; font-size: 15px; color: var(--akad); font-variant-numeric: tabular-nums;
+  }
+  .akad-tag { font-size: 11px; color: var(--ink-faint); font-weight: 400; margin-left: 6px; }
+  .akad-badge {
+    font-size: 10px; letter-spacing: 0.04em; color: var(--akad); border: 1px solid var(--akad);
+    border-radius: 999px; padding: 1px 7px; margin-left: 6px; white-space: nowrap;
+  }
+  .akad-foot {
+    display: flex; gap: 28px; flex-wrap: wrap; margin-top: 16px; padding-top: 16px;
+    border-top: 1px solid var(--rule);
+  }
+  .akad-foot-item { display: flex; flex-direction: column; gap: 3px; }
+  .akad-foot-k {
+    font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-faint);
+  }
+  .akad-foot-v {
+    font-family: "Fraunces", Georgia, serif; font-variation-settings: "opsz" 36;
+    font-weight: 500; font-size: 20px; color: var(--ink);
+  }
+  .akad-foot-total .akad-foot-v { color: var(--akad); }
+  .akad-note { margin: 14px 0 0; font-size: 12px; color: var(--ink-soft); line-height: 1.6; font-style: italic; }
+
+  /* TIER / HIERARCHIE */
+  .tier-table td:first-child { font-weight: 600; white-space: nowrap; }
+  .tier-table .tier-desc { font-weight: 400; font-size: 12px; color: var(--ink-faint); display: block; margin-top: 2px; white-space: normal; }
+  .tier-A td:first-child { border-left: 3px solid var(--mini); padding-left: 17px; }
+  .tier-B td:first-child { border-left: 3px solid var(--skol); padding-left: 17px; }
+  .tier-C td:first-child { border-left: 3px solid var(--tight); padding-left: 17px; }
+  .tier-D td:first-child { border-left: 3px solid var(--consult); padding-left: 17px; }
+  .tier-table input[type="number"] { width: 56px; padding: 5px 6px; border: 1px solid var(--rule); border-radius: 4px; font-family: inherit; font-size: 13px; text-align: right; background: var(--surface); color: var(--ink); }
+  .tier-rev { font-family: "Fraunces", Georgia, serif; font-variation-settings: "opsz" 24; font-weight: 500; font-variant-numeric: tabular-nums; }
+  .tier-foot { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 18px; }
+  .tier-foot-item { flex: 1; min-width: 150px; background: var(--surface); border: 1px solid var(--rule); border-radius: 4px; padding: 16px 18px; }
+  .tier-foot-item.big { border-top: 3px solid var(--skol); }
+  .tier-foot-k { display: block; font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 6px; }
+  .tier-foot-v { font-family: "Fraunces", Georgia, serif; font-variation-settings: "opsz" 36; font-weight: 500; font-size: 24px; color: var(--ink); }
+  .tier-badge { display: inline-block; margin-left: 8px; font-family: "DM Sans", sans-serif; font-size: 10px; font-weight: 500; letter-spacing: 0.04em; padding: 2px 7px; border-radius: 999px; background: var(--consult-soft); color: var(--consult); vertical-align: middle; }
 </style>
 </head>
 <body>
 <div class="page">
 
+  <nav class="tabs">
+    <button class="tab-btn active" data-tab="scenario">Plán scénářů</button>
+    <button class="tab-btn" data-tab="hierarchie">Hierarchie témat</button>
+    <button class="tab-btn" data-tab="vertikaly">Rozdělení dle vertikál</button>
+    <button class="tab-btn" data-tab="akademie">Akademie – Podzim 2026</button>
+  </nav>
+
+  <div class="tab-content active" id="tab-scenario">
+
   <header class="header">
     <div>
       <div class="eyebrow">#HzM · Plánovač H2 2026</div>
       <h1>Kolik <em>kohort</em> a <em>termínů</em> potřebujeme?</h1>
-      <p class="header-desc">Interaktivní model pro plánování Miniakademie a Školení v druhé polovině roku 2026. <strong>Cesta B:</strong> Mini cíl navýšen na 3,3 M, Škol cíl snížen na 3,8 M (celkem 7,1 M). Léto má strop 3 Mini + 13 Škol měsíčně; září–polovina prosince absorbuje zbytek. Posuvníky simulují průměrnou obsazenost a počet konzultací.</p>
+      <p class="header-desc">Interaktivní model pro plánování Miniakademie a Školení v druhé polovině roku 2026. <strong>Cesta B + AI:</strong> 8,5 M Kč = Mini 3,64 M + Školení 4,14 M + AI Akademie 0,72 M. Z rozpočtu 1,393 M na AI jde 716 k do AI Akademie (viz 3. tab), zbylých 677 k se dělí 50/50 do Mini a Školení. Léto má strop 3 Mini + 12–14 Škol měsíčně; zbytek padá do září–poloviny prosince.</p>
     </div>
     <div class="targets">
       <div class="target-row">
         <span class="target-label">Miniakademie cíl H2</span>
-        <span class="target-num mini">3 300 000 Kč</span>
+        <span class="target-num mini">3 639 000 Kč</span>
       </div>
       <div class="target-row">
         <span class="target-label">Školení cíl H2</span>
-        <span class="target-num skol">3 800 000 Kč</span>
+        <span class="target-num skol">4 139 000 Kč</span>
       </div>
-      <div class="target-row" style="margin-top: 14px;">
-        <span class="target-label">PM kapacita strop</span>
-        <span class="target-label" style="color: var(--ink);">46 kohort · 243 termínů</span>
+      <div class="target-row">
+        <span class="target-label">AI Akademie cíl H2</span>
+        <span class="target-num akad">716 000 Kč</span>
       </div>
     </div>
   </header>
 
   <section class="section">
     <h2><span class="num">01</span>Ekonomika eventu</h2>
+    <p class="price-hint">Ceny jsou editovatelné — klikni do pole a uprav cenu. Model se přepočítá. Obsazenost se nastavuje posuvníky níže.</p>
     <div class="economics">
       <div class="econ-card mini">
         <div class="econ-name">Miniakademie</div>
         <div class="econ-format">4 lekce · kapacita 45 míst</div>
-        <div class="econ-row"><span class="k">Cena za vstupenku</span><span class="v">3 000 Kč</span></div>
+        <div class="econ-row"><span class="k">Cena za vstupenku</span><span class="v"><input type="number" id="miniPrice" class="price-input" value="2875" min="0" step="25"> Kč</span></div>
         <div class="econ-row"><span class="k">Průměrná obsazenost</span><span class="v" id="econMiniFill">30</span></div>
         <div class="econ-headline">
           <span class="k">Výnos / kohorta</span>
@@ -665,7 +905,7 @@
       <div class="econ-card skol">
         <div class="econ-name">Školení</div>
         <div class="econ-format">1 lekce · kapacita 90 míst</div>
-        <div class="econ-row"><span class="k">Cena za vstupenku</span><span class="v">600 Kč</span></div>
+        <div class="econ-row"><span class="k">Cena za vstupenku</span><span class="v"><input type="number" id="skolPrice" class="price-input" value="664" min="0" step="10"> Kč</span></div>
         <div class="econ-row"><span class="k">Průměrná obsazenost</span><span class="v" id="econSkolFill">45</span></div>
         <div class="econ-headline">
           <span class="k">Výnos / termín</span>
@@ -675,7 +915,7 @@
       <div class="econ-card consult">
         <div class="econ-name">Konzultace</div>
         <div class="econ-format">75 min · 1:1 s lektorkou</div>
-        <div class="econ-row"><span class="k">Cena za konzultaci</span><span class="v">5 000 Kč</span></div>
+        <div class="econ-row"><span class="k">Cena za konzultaci</span><span class="v"><input type="number" id="consultPrice" class="price-input" value="5000" min="0" step="100"> Kč</span></div>
         <div class="econ-row"><span class="k">Počet za měsíc</span><span class="v" id="econConsultN">10</span></div>
         <div class="econ-headline">
           <span class="k">Výnos / měsíc</span>
@@ -717,13 +957,34 @@
           <div class="slider-per-event">H2 celkem: <span id="consultH2">300 000 Kč</span></div>
         </div>
       </div>
+      <div class="control-grid risk">
+        <div class="control">
+          <div class="control-head">
+            <span class="control-label">Plánovací rezerva</span>
+            <span class="control-value"><span id="bufferVal">0</span><span class="of"> %</span></span>
+          </div>
+          <input type="range" id="buffer" min="0" max="25" step="1" value="0">
+          <div class="slider-foot"><span>0 %</span><span>25 %</span></div>
+          <div class="slider-per-event">Naplánuje o tolik víc eventů, než kolik vyžaduje striktní cíl — rezerva pro výpadky v obsazenosti</div>
+        </div>
+        <div class="control">
+          <div class="control-head">
+            <span class="control-label">Léto se plní na</span>
+            <span class="control-value"><span id="summerVal">100</span><span class="of"> %</span></span>
+          </div>
+          <input type="range" id="summer" min="50" max="100" step="5" value="100">
+          <div class="slider-foot"><span>50 %</span><span>100 %</span></div>
+          <div class="slider-per-event">Výpadek července–srpna dopočítá do září–prosince</div>
+        </div>
+        <div class="risk-summary-box" id="riskSummary">—</div>
+      </div>
       <div class="presets">
         <span class="presets-label">Přednastavené scénáře</span>
         <button class="preset-btn" data-mini="20" data-skol="28" data-consult="10">Status quo · 20 / 28</button>
-        <button class="preset-btn" data-mini="25" data-skol="35" data-consult="10">Conservative · 25 / 35</button>
-        <button class="preset-btn active" data-mini="30" data-skol="45" data-consult="10">Base · 30 / 45</button>
-        <button class="preset-btn" data-mini="35" data-skol="60" data-consult="15">Stretch · 35 / 60</button>
-        <button class="preset-btn" data-mini="45" data-skol="90" data-consult="20">At-cap · 45 / 90</button>
+        <button class="preset-btn" data-mini="25" data-skol="35" data-consult="10">Opatrný · 25 / 35</button>
+        <button class="preset-btn active" data-mini="30" data-skol="45" data-consult="10">Základní · 30 / 45</button>
+        <button class="preset-btn" data-mini="35" data-skol="60" data-consult="15">Ambiciózní · 35 / 60</button>
+        <button class="preset-btn" data-mini="45" data-skol="90" data-consult="20">Na maximum · 45 / 90</button>
       </div>
     </div>
   </section>
@@ -734,7 +995,7 @@
       <div class="sum-card mini">
         <div class="sum-head">
           <span class="sum-title">Miniakademie kohorty</span>
-          <span class="sum-target">cíl 3 300 000 Kč</span>
+          <span class="sum-target">cíl 3 639 000 Kč</span>
         </div>
         <div class="sum-big">
           <span class="sum-big-num" id="miniTotal">34</span>
@@ -743,17 +1004,16 @@
         <div class="sum-peak">Maximum v měsíci: <strong id="miniPeak">8</strong> kohort</div>
         <div class="util-block">
           <div class="util-head">
-            <span class="util-label">PM kapacita využita</span>
-            <span class="util-pct" id="miniUtilPct">74 %</span>
+            <span class="util-label">Nejsilnější měsíc v přepočtu</span>
+            <span class="util-pct" id="miniPerWeek">1,8 / týden</span>
           </div>
-          <div class="util-bar-bg"><div class="util-bar-fill" id="miniUtilBar" style="width: 74%; background: var(--ok);"></div></div>
-          <div class="util-verdict status-ok" id="miniVerdict">V kapacitě (46 strop)</div>
+          <div class="util-verdict" style="color: var(--ink-faint);">Tolik nových kohort se spouští týdně v nejsilnějším měsíci.</div>
         </div>
       </div>
       <div class="sum-card skol">
         <div class="sum-head">
           <span class="sum-title">Školení termíny</span>
-          <span class="sum-target">cíl 3 800 000 Kč</span>
+          <span class="sum-target">cíl 4 139 000 Kč</span>
         </div>
         <div class="sum-big">
           <span class="sum-big-num" id="skolTotal">141</span>
@@ -762,11 +1022,10 @@
         <div class="sum-peak">Maximum v měsíci: <strong id="skolPeak">36</strong> termínů</div>
         <div class="util-block">
           <div class="util-head">
-            <span class="util-label">PM kapacita využita</span>
-            <span class="util-pct" id="skolUtilPct">58 %</span>
+            <span class="util-label">Nejsilnější měsíc v přepočtu</span>
+            <span class="util-pct" id="skolPerWeek">8,4 / týden</span>
           </div>
-          <div class="util-bar-bg"><div class="util-bar-fill" id="skolUtilBar" style="width: 58%; background: var(--ok);"></div></div>
-          <div class="util-verdict status-ok" id="skolVerdict">V kapacitě (243 strop)</div>
+          <div class="util-verdict" style="color: var(--ink-faint);">Orientační hranice z týmu: ~9 webinářů/týden (po–čt 2× denně, pá 1×) a i ta je nereálná.</div>
         </div>
       </div>
     </div>
@@ -794,73 +1053,288 @@
   <div class="notes">
     <div>
       <h3>Předpoklady modelu</h3>
-      <p><span class="ki">Příjem podle data objednávky</span> — výnos se počítá v měsíci, kdy přijde objednávka, ne kdy se event koná. Mediánový lead time je 6–7 dnů.</p>
-      <p><span class="ki">PM kapacitní strop</span> nastavený na 2× rychlost H1 2026 (17 kohort + 89 termínů za 4,4 měsíce) projektovaná do 6 měsíců = 46 kohort, 243 termínů.</p>
-      <p><span class="ki">Konzultace</span> přispívají do cíle Školení, distribuováno rovnoměrně po měsících.</p>
+      <p><span class="ki">Příjem podle data objednávky</span> — výnos se počítá v měsíci, kdy přijde objednávka, ne kdy se event koná. Medián doby mezi objednávkou a akcí je 6–7 dnů.</p>
+      <p><span class="ki">Bez kapacitního stropu</span> — model neukazuje žádnou PM kapacitu. Místo toho přepočítává peak měsíc na týdenní tempo (kohorty a webináře za týden), které si tým srovná s realitou sám.</p>
+      <p><span class="ki">Cena vs. obsazenost</span> — model počítá cenu a obsazenost nezávisle. Při zvýšení ceny realisticky klesne obsazenost; tenhle efekt musíš nasimulovat ručně.</p>
+      <p><span class="ki">Akademie – Podzim 2026</span> — na samostatném 3. tabu. Do 8,5 M cíle se počítá jen AI Akademie (0,72 M); JA, ASS a AMM jsou samostatný příjmový proud mimo plán Mini/Škol.</p>
     </div>
     <div>
-      <h3>Provozní pravidla</h3>
-      <p><span class="ki">Cesta B</span> — Mini cíl 3,3 M (z 3,0 M), Škol cíl 3,8 M (z 4,1 M). Celkový H2 cíl zachován na 7,1 M Kč. Cíl: snížit tlak na Sep–Nov Škol pod 30 termínů/měsíc.</p>
-      <p><span class="ki">Letní strop červenec–srpen</span> — max 3 Miniakademie a 12–14 Školení měsíčně (270 k Mini, 400 k Škol).</p>
-      <p><span class="ki">Stop date 17. 12.</span> — všechny eventy musí začít do 17. 12., aby zachytily celé prodejní okno před firemní dovolenou. Prosinec modelujeme jako poloviční měsíc.</p>
+      <h3>Rizikové parametry</h3>
+      <p><span class="ki">Plánovací rezerva</span> — naplánuje o zadané % víc eventů, než kolik cíl striktně vyžaduje. Rezerva pro výpadky v obsazenosti.</p>
+      <p><span class="ki">Léto se plní na X %</span> — pesimistický scénář. Výpadek v červenci a srpnu se poměrně rozpustí do září až prosince. Ukazuje, co je v sázce, když léto nevyjde.</p>
+      <p><span class="ki">Uzávěrka 17. 12.</span> — všechny eventy musí začít do 17. 12. Prosinec modelujeme jako poloviční měsíc.</p>
     </div>
   </div>
 
   <div class="footer">
     <span>#HolkyzMarketingu · EDU tým</span>
-    <span>Verze: 13. 5. 2026 · Cesta B (Mini 3,3 M / Škol 3,8 M) · interní pracovní materiál</span>
+    <span>Verze: 28. 5. 2026 · Cesta B + AI · Mini 3,64 M / Škol 4,14 M / AI Akademie 0,72 M · Akademie na samostatném tabu</span>
   </div>
+
+  </div><!-- /tab-scenario -->
+
+  <div class="tab-content" id="tab-hierarchie">
+
+    <header class="header">
+      <div>
+        <div class="eyebrow">#HzM · Hierarchie témat</div>
+        <h1>Která <em>témata</em> nesou výnos?</h1>
+        <p class="header-desc">Témata nejsou rovnocenná. Tahouni přetékají kapacitu a snesou časté opakování, doplňková témata jedou jen občas a strategická držíme kvůli kategorii i při nízké obsazenosti. Tabulka počítá, kolik <strong>termínů</strong> a kolik <strong>nových témat</strong> reálně potřebuješ při odstupňovaném fillu. Cena ŠKO 664 Kč (průměr na vstupenku vč. slev), cíl webinářů 3,84 M (= Škol 4,14 M − 0,3 M konzultace).</p>
+      </div>
+      <div class="targets">
+        <div class="target-row">
+          <span class="target-label">ŠKO termíny H2</span>
+          <span class="target-num skol" id="hTotalTerm">—</span>
+        </div>
+        <div class="target-row">
+          <span class="target-label">Výnos webináře</span>
+          <span class="target-label" id="hTotalRev" style="color: var(--ink); font-weight: 500;">—</span>
+        </div>
+        <div class="target-row">
+          <span class="target-label">Nových témat potřeba</span>
+          <span class="target-label" id="hNewThemes" style="color: var(--ink); font-weight: 500;">—</span>
+        </div>
+      </div>
+    </header>
+
+    <section class="section">
+      <h2><span class="num">01</span>Hierarchie ŠKO témat</h2>
+      <p class="price-hint">Editovatelné: počet témat v tieru, reálný fill a počet běhů na téma za H2. Termíny a výnos se přepočítají. „Nových" = kolik témat v tieru přibude oproti dnešnímu katalogu.</p>
+      <table class="month-table tier-table">
+        <thead>
+          <tr>
+            <th>Tier</th>
+            <th class="col-events">Témat</th>
+            <th class="col-target">dnes</th>
+            <th class="col-events">Fill</th>
+            <th class="col-events">Běhů/téma</th>
+            <th class="col-events">Termíny</th>
+            <th class="col-events">Výnos H2</th>
+          </tr>
+        </thead>
+        <tbody id="tierBody"></tbody>
+      </table>
+      <div class="tier-foot">
+        <div class="tier-foot-item big"><span class="tier-foot-k">Termíny H2</span><span class="tier-foot-v" id="tierTerm">—</span></div>
+        <div class="tier-foot-item big"><span class="tier-foot-k">Výnos vs. cíl 3,84 M</span><span class="tier-foot-v" id="tierGap">—</span></div>
+        <div class="tier-foot-item"><span class="tier-foot-k">Z toho strategické (pozicování)</span><span class="tier-foot-v" id="tierStrat">—</span></div>
+        <div class="tier-foot-item"><span class="tier-foot-k">Nových témat vyrobit</span><span class="tier-foot-v" id="tierNew">—</span></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2><span class="num">02</span>MiA — proč je těžší</h2>
+      <p class="header-desc" style="max-width: 760px;">MiA má rotaci <strong>min. 4 měsíce</strong>, takže v 3měsíčním podzimu se <strong>žádné téma nezopakuje</strong> → počet termínů = počet různých témat. Při 8 MiA/měsíc to je 24 termínů = 24 různých témat. Máš ~8 silných → potřebuješ <strong>~16 nových MiA</strong>. Jediná páčka: pustit A-tier vítěze (Meta 167 %, Canva 108 %) i v kratším odstupu → spadneš na ~10 nových.</p>
+      <table class="month-table tier-table">
+        <thead>
+          <tr>
+            <th>Tier MiA</th>
+            <th class="col-events">Témat dnes</th>
+            <th class="col-target">Fill 2026</th>
+            <th>Příklady</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="tier-A"><td>A — Tahouni</td><td class="col-events">2</td><td class="col-target">100–167 %</td><td style="font-size: 13px; color: var(--ink-soft);">Meta Business Suite, Canva</td></tr>
+          <tr class="tier-B"><td>B — Spolehliví</td><td class="col-events">6</td><td class="col-target">50–88 %</td><td style="font-size: 13px; color: var(--ink-soft);">Event, vibecoding, Správa sítí, PPC, e-mail, copy</td></tr>
+          <tr class="tier-C"><td>C — Slabší</td><td class="col-events">3</td><td class="col-target">18–37 %</td><td style="font-size: 13px; color: var(--ink-soft);">Kreativní proces, Webová analytika, Data-driven</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <div class="notes">
+      <div>
+        <h3>Dvě osy hierarchie</h3>
+        <p><span class="ki">Fill (výnos)</span> — kolik téma reálně naplní. Tahouni přetékají kapacitu, doplňková jedou na 35–40.</p>
+        <p><span class="ki">Strategická hodnota</span> — nezávislá osa. Tier D (Account management, Právo) má nízký fill, ale držíme ho kvůli kategorii a partnerstvím — měř ho na pozici, ne na obsazenost.</p>
+        <p><span class="ki">Vyřadit</span> = jen průnik nízký fill × nízká strategie (mrtvé překryvy, slepé pokusy s 1 prodejem).</p>
+      </div>
+      <div>
+        <h3>Jak naplnit H2 efektivně</h3>
+        <p><span class="ki">Páteř = tahouni</span> na zvýšené kapacitě a při častém opakování. Naplní fill 80+ a nesou nejvíc výnosu na termín.</p>
+        <p><span class="ki">Nová témata = varianty tahounů</span> (Canva pro Reels, IG pro pokročilé). Vysoká šance na naplnění a nízké náklady na výrobu.</p>
+        <p><span class="ki">Nestavět nová nišová témata</span> v tieru D kvůli objemu — leda kvůli kategorii (account management).</p>
+      </div>
+    </div>
+
+    <div class="footer">
+      <span>#HolkyzMarketingu · EDU tým</span>
+      <span>Verze: 28. 5. 2026 · Hierarchie témat · fill z 2026 katalogu</span>
+    </div>
+
+  </div><!-- /tab-hierarchie -->
+
+  <div class="tab-content" id="tab-vertikaly">
+
+    <header class="header">
+      <div>
+        <div class="eyebrow">#HzM · Rozdělení dle vertikál</div>
+        <h1>Která <em>témata</em> dotáhnou H2 cíl?</h1>
+        <p class="header-desc">Celkový H2 cíl <strong>8,5 M Kč</strong> rozdělený dle tematických vertikál. Hodnoty jsou editovatelné — klikni do pole a uprav cíl libovolné vertikály. Výchozí čísla vycházejí z reálných tržeb 2025 (× 1,16). AI v marketingu fixně 1,393 M Kč. Akademie a VoD nejsou v tomto rozpočtu — plánovač zachycuje jen Mini + Školení + Konzultace.</p>
+      </div>
+      <div class="targets">
+        <div class="target-row">
+          <span class="target-label">Celkový H2 cíl</span>
+          <span class="target-num mini">8 500 000 Kč</span>
+        </div>
+        <div class="target-row">
+          <span class="target-label">Součet vertikál</span>
+          <span class="target-num skol" id="vertSum">— Kč</span>
+        </div>
+        <div class="target-row" style="margin-top: 14px;">
+          <span class="target-label">Rozdíl</span>
+          <span class="target-label" id="vertDiff" style="color: var(--ink); font-weight: 500;">—</span>
+        </div>
+      </div>
+    </header>
+
+    <section class="section">
+      <h2><span class="num">01</span>Rozdělení cíle dle vertikál</h2>
+      <table class="month-table vert-table">
+        <thead>
+          <tr>
+            <th>Vertikála</th>
+            <th class="col-target">2025 (k)</th>
+            <th class="col-target">% '25</th>
+            <th class="col-target">2026* (k)</th>
+            <th class="col-target">% '26</th>
+            <th class="col-events">H2 cíl (k Kč)</th>
+            <th class="col-target">% z H2</th>
+            <th class="col-events">Mini koh.</th>
+            <th class="col-events">Škol term.</th>
+          </tr>
+        </thead>
+        <tbody id="vertBody"></tbody>
+      </table>
+      <p class="price-hint" style="margin-top: 16px;">Rozpad na Mini a Škol je jen hrubý odhad rovnoměrným poměrem a reaguje na obsazenost z první stránky. Reálný mix se u jednotlivých vertikál liší — ber to orientačně.</p>
+    </section>
+
+    <div class="notes">
+      <div>
+        <h3>Jak číst tabulku</h3>
+        <p><span class="ki">2025 (k)</span> — skutečné tržby vertikály ze Školení a MiA za celý rok 2025 (jen platící objednávky, po vyčištění klasifikace).</p>
+        <p><span class="ki">2026* (k)</span> — tržby ze Školení a MiA od ledna do května 2026. Jde o <strong>částečný rok</strong> (5 měsíců), navíc o jarní pololetí, kdy se prodává nejvíc — s celým rokem 2025 proto srovnávej obezřetně.</p>
+        <p><span class="ki">% '25 / % '26</span> — podíl vertikály na tržbách v daném roce. Vedle sebe ukazují, jak se mění mix poptávky.</p>
+        <p><span class="ki">H2 2026 cíl</span> — editovatelný cíl pro druhé pololetí 2026. Výchozí hodnota = tržby 2025 × 1,16. AI vertikála je pevně 1 393 k.</p>
+        <p><span class="ki">% z H2</span> — podíl vertikály na celkovém cíli 8,5 M Kč.</p>
+      </div>
+      <div>
+        <h3>Co data za 2026 ukazují</h3>
+        <p><span class="ki">PPC, AI, Grafika a Event jedou nejvíc</span> — za pět měsíců už dotáhly skoro celý loňský rok (PPC 519 z 535 k, Grafika 400 z 473 k, Event 244 z 254 k).</p>
+        <p><span class="ki">AI roste nejrychleji</span> — 326 k za pět měsíců proti 126 k za celý 2025, tedy 2,6×. Cíl 1 393 k na H2 tomu odpovídá.</p>
+        <p><span class="ki">Osobní značka letos mizí</span> — v katalogu 2026 nemá žádné tržby. Buď ji oživit, nebo cíl přesunout jinam.</p>
+        <p><span class="ki">Součet musí sedět</span> — pokud rozdíl proti 8,5 M není nula, uprav cíle vertikál, dokud nejsou v rovnováze.</p>
+      </div>
+    </div>
+
+    <div class="footer">
+      <span>#HolkyzMarketingu · EDU tým</span>
+      <span>Verze: 28. 5. 2026 · Rozdělení dle vertikál · 2025 + 2026</span>
+    </div>
+
+  </div><!-- /tab-vertikaly -->
+
+  <div class="tab-content" id="tab-akademie">
+
+    <header class="header">
+      <div>
+        <div class="eyebrow">#HzM · Akademie podzim 2026</div>
+        <h1>Které <em>Akademie</em> poběží na podzim?</h1>
+        <p class="header-desc">Akademie plánované na podzim 2026. Editovatelné — počet tříd, studentek a cena (s DPH). Příjem je s DPH. <strong>AI Akademie</strong> je součást 8,5 M cíle (z rozpočtu 1,393 M na AI); JA, ASS a AMM jsou samostatný příjmový proud mimo plán Mini/Škol.</p>
+      </div>
+      <div class="targets">
+        <div class="target-row">
+          <span class="target-label">Akademie celkem (s DPH)</span>
+          <span class="target-num akad" id="akadTotal">— Kč</span>
+        </div>
+        <div class="target-row">
+          <span class="target-label">V 8,5 M cíli (AI Akademie)</span>
+          <span class="target-label" id="akadInTarget" style="color: var(--ink); font-weight: 500;">—</span>
+        </div>
+        <div class="target-row">
+          <span class="target-label">Separátně (JA + ASS + AMM)</span>
+          <span class="target-label" id="akadSeparate" style="color: var(--ink); font-weight: 500;">—</span>
+        </div>
+      </div>
+    </header>
+
+    <section class="section">
+      <h2><span class="num">01</span>Akademie – Podzim 2026</h2>
+      <p class="price-hint">Klikni do pole a uprav počet tříd, studentek nebo cenu. Všechny ceny i příjem jsou s DPH.</p>
+      <div class="sum-card akad">
+        <table class="akad-table">
+          <thead>
+            <tr>
+              <th>Akademie</th>
+              <th>Třída</th>
+              <th>Studentek / třída</th>
+              <th>Cena / studentku (s DPH)</th>
+              <th>H2 příjem (s DPH)</th>
+            </tr>
+          </thead>
+          <tbody id="akadBody"></tbody>
+        </table>
+        <p class="akad-note">Počty tříd a studentek u JA / ASS / AMM vycházejí z Timeline H2 a zadání — uprav podle reálného plánu. Ceny i příjem jsou s DPH. AI Akademie: 1 třída × 40 studentek × 17 900 Kč s DPH.</p>
+      </div>
+    </section>
+
+    <div class="notes">
+      <div>
+        <h3>Jak číst kartu</h3>
+        <p><span class="ki">Třída</span> — počet kohort / běhů dané Akademie na podzim 2026.</p>
+        <p><span class="ki">Cena s DPH</span> — cena za studentku včetně DPH, konzistentně s Mini a Škol.</p>
+        <p><span class="ki">v 8,5 M cíli</span> — jen AI Akademie je součást celkového H2 cíle 8,5 M (0,72 M). JA, ASS a AMM jsou samostatný příjmový proud.</p>
+      </div>
+      <div>
+        <h3>Předpoklady</h3>
+        <p><span class="ki">AI Akademie</span> — nová Akademie pro marketingové manažer(k)y, 1 třída, 40 studentek, cena 17 900 Kč s DPH. Naty staví sylabus.</p>
+        <p><span class="ki">JA / ASS / AMM</span> — počty tříd a studentek jsou odhad. Reálná čísla zná Naty a Bára — přepiš v tabulce.</p>
+        <p><span class="ki">Uzávěrka 17. 12.</span> — všechny běhy musí začít do 17. 12.</p>
+      </div>
+    </div>
+
+    <div class="footer">
+      <span>#HolkyzMarketingu · EDU tým</span>
+      <span>Verze: 28. 5. 2026 · Akademie podzim 2026</span>
+    </div>
+
+  </div><!-- /tab-akademie -->
 
 </div>
 
 <script>
-  const MINI_PRICE = 3000;
-  const SKOL_PRICE = 600;
-  const CONSULT_PRICE = 5000;
-  const MINI_PM_CAP = 46;
-  const SKOL_PM_CAP = 243;
-  
   const targets = [
-    { name: 'červenec', mini: 270, skol: 400, peak: false, summer: true },
-    { name: 'srpen', mini: 270, skol: 400, peak: false, summer: true },
-    { name: 'září', mini: 790, skol: 860, peak: false },
-    { name: 'říjen', mini: 790, skol: 860, peak: false },
-    { name: 'listopad', mini: 790, skol: 860, peak: false },
-    { name: 'prosinec (do 17.)', mini: 395, skol: 430, peak: false }
+    { name: 'červenec', mini: 270, skol: 400, summer: true },
+    { name: 'srpen', mini: 270, skol: 400, summer: true },
+    { name: 'září', mini: 885, skol: 954 },
+    { name: 'říjen', mini: 885, skol: 954 },
+    { name: 'listopad', mini: 885, skol: 954 },
+    { name: 'prosinec (do 17.)', mini: 444, skol: 477 }
   ];
   
   const fmt = n => n.toLocaleString('cs-CZ').replace(/\u00a0/g, ' ').replace(/,/g, ' ');
-  
-  function statusColor(util) {
-    if (util < 75) return 'var(--ok)';
-    if (util < 100) return 'var(--tight)';
-    return 'var(--over)';
-  }
-  
-  function statusClass(util) {
-    if (util < 75) return 'status-ok';
-    if (util < 100) return 'status-tight';
-    return 'status-over';
-  }
-  
-  function statusText(util, cap) {
-    if (util < 75) return 'V kapacitě (' + cap + ' strop)';
-    if (util < 100) return 'Těsně pod stropem — málo rezervy';
-    return 'Nad kapacitou — potřeba vyšší obsazenost nebo méně eventů';
-  }
   
   function recompute() {
     const miniFill = +document.getElementById('miniFill').value;
     const skolFill = +document.getElementById('skolFill').value;
     const consultPerMonth = +document.getElementById('consult').value;
+    const miniPrice = +document.getElementById('miniPrice').value || 0;
+    const skolPrice = +document.getElementById('skolPrice').value || 0;
+    const consultPrice = +document.getElementById('consultPrice').value || 0;
+    const bufferRaw = +document.getElementById('buffer').value || 0;
+    const summerRaw = +document.getElementById('summer').value || 100;
+    const buffer = bufferRaw / 100;
+    const summerFill = summerRaw / 100;
     
     document.getElementById('miniFillVal').textContent = miniFill;
     document.getElementById('skolFillVal').textContent = skolFill;
     document.getElementById('consultVal').textContent = consultPerMonth;
+    document.getElementById('bufferVal').textContent = bufferRaw;
+    document.getElementById('summerVal').textContent = summerRaw;
     
-    const miniRevPer = miniFill * MINI_PRICE;
-    const skolRevPer = skolFill * SKOL_PRICE;
-    const consultRevPerMonth = consultPerMonth * CONSULT_PRICE;
+    const miniRevPer = miniFill * miniPrice;
+    const skolRevPer = skolFill * skolPrice;
+    const consultRevPerMonth = consultPerMonth * consultPrice;
     
     document.getElementById('econMiniFill').textContent = miniFill;
     document.getElementById('econSkolFill').textContent = skolFill;
@@ -873,30 +1347,53 @@
     document.getElementById('skolPerEvent').textContent = fmt(skolRevPer) + ' Kč';
     document.getElementById('consultH2').textContent = fmt(consultRevPerMonth * 6) + ' Kč';
     
+    // ---- DOWNSIDE: léto neplní, podzim absorbuje výpadek ----
+    let summerMissMini = 0, summerMissSkol = 0;
+    let autumnBaseMini = 0, autumnBaseSkol = 0;
+    targets.forEach(t => {
+      if (t.summer) {
+        summerMissMini += t.mini * (1 - summerFill);
+        summerMissSkol += t.skol * (1 - summerFill);
+      } else {
+        autumnBaseMini += t.mini;
+        autumnBaseSkol += t.skol;
+      }
+    });
+    
     let miniTotal = 0, skolTotal = 0, miniPeak = 0, skolPeak = 0;
     const tbody = document.getElementById('monthlyBody');
     tbody.innerHTML = '';
     
-    let miniRevSum = 0, skolRevSum = 0;
-    
     targets.forEach(t => {
-      const miniNeed = Math.ceil((t.mini * 1000) / miniRevPer);
-      const skolRevAfter = Math.max(0, t.skol * 1000 - consultRevPerMonth);
-      const skolNeed = Math.ceil(skolRevAfter / skolRevPer);
+      // effective monthly target after downside redistribution
+      let effMini, effSkol;
+      if (t.summer) {
+        effMini = t.mini * summerFill;
+        effSkol = t.skol * summerFill;
+      } else {
+        effMini = t.mini + (autumnBaseMini > 0 ? summerMissMini * (t.mini / autumnBaseMini) : 0);
+        effSkol = t.skol + (autumnBaseSkol > 0 ? summerMissSkol * (t.skol / autumnBaseSkol) : 0);
+      }
+      // buffer inflates the planning target
+      const planMini = effMini * (1 + buffer);
+      const planSkol = effSkol * (1 + buffer);
+      
+      const miniNeed = miniRevPer > 0 ? Math.ceil((planMini * 1000) / miniRevPer) : 0;
+      const skolRevAfter = Math.max(0, planSkol * 1000 - consultRevPerMonth);
+      const skolNeed = skolRevPer > 0 ? Math.ceil(skolRevAfter / skolRevPer) : 0;
+      
       miniTotal += miniNeed;
       skolTotal += skolNeed;
-      miniRevSum += miniNeed * miniRevPer;
-      skolRevSum += skolNeed * skolRevPer + consultRevPerMonth;
-      // Track max across all months (no peak concept in flat distribution)
       miniPeak = Math.max(miniPeak, miniNeed);
       skolPeak = Math.max(skolPeak, skolNeed);
+      
       const summerTag = t.summer ? ' <span style="color: var(--ink-faint); font-size: 11px; font-weight: 400;">léto</span>' : '';
-      const rowStyle = t.summer ? 'style="background: rgba(255,235,180,0.15);"' : '';
+      const rowStyle = t.summer ? 'style="background: rgba(255,240,188,0.45);"' : '';
       tbody.innerHTML += '<tr ' + rowStyle + '>' +
         '<td>' + t.name + summerTag + '</td>' +
-        '<td class="col-target">' + t.mini + ' k</td>' +
+        '<td class="col-target">' + Math.round(effMini) + ' k</td>' +
         '<td class="col-events">' + miniNeed + '</td>' +
-        '<td class="col-target">' + t.skol + ' k</td>' +
+        '<td class="col-target">' + Math.round(effSkol) + ' k</td>' +
         '<td class="col-events">' + skolNeed + '</td>' +
         '<td class="col-target">' + consultPerMonth + '</td>' +
         '</tr>';
@@ -904,38 +1401,39 @@
     
     tbody.innerHTML += '<tr class="total">' +
       '<td>Celkem H2</td>' +
-      '<td class="col-target">3 300 k</td>' +
+      '<td class="col-target">3 639 k</td>' +
       '<td class="col-events">' + miniTotal + '</td>' +
-      '<td class="col-target">3 800 k</td>' +
+      '<td class="col-target">4 139 k</td>' +
       '<td class="col-events">' + skolTotal + '</td>' +
       '<td class="col-target">' + (consultPerMonth * 6) + '</td>' +
       '</tr>';
     
-    const miniUtil = Math.round((miniTotal / MINI_PM_CAP) * 100);
-    const skolUtil = Math.round((skolTotal / SKOL_PM_CAP) * 100);
+    // ---- risk summary box ----
+    let rsb = '';
+    if (bufferRaw === 0 && summerRaw === 100) {
+      rsb = '<div class="rsb-line"><strong>Bez rezervy, léto na 100 %.</strong></div>' +
+            '<div class="rsb-line">Plán počítá přesně na cíl. Posuň posuvníky pro rezervu nebo pesimistický scénář.</div>';
+    } else {
+      if (bufferRaw > 0) {
+        rsb += '<div class="rsb-line"><strong>Rezerva ' + bufferRaw + ' %</strong> — plánuješ ' + miniTotal + ' kohort a ' + skolTotal + ' termínů včetně rezervy.</div>';
+      }
+      if (summerRaw < 100) {
+        rsb += '<div class="rsb-line"><strong>Léto na ' + summerRaw + ' %</strong> — na podzim se dohání navíc ' + Math.round(summerMissMini) + ' k Mini a ' + Math.round(summerMissSkol) + ' k Škol.</div>';
+      }
+      if (rsb === '') {
+        rsb = '<div class="rsb-line">Plán počítá přesně na cíl.</div>';
+      }
+    }
+    document.getElementById('riskSummary').innerHTML = rsb;
     
     document.getElementById('miniTotal').textContent = miniTotal;
     document.getElementById('skolTotal').textContent = skolTotal;
     document.getElementById('miniPeak').textContent = miniPeak;
     document.getElementById('skolPeak').textContent = skolPeak;
-    document.getElementById('miniUtilPct').textContent = miniUtil + ' %';
-    document.getElementById('skolUtilPct').textContent = skolUtil + ' %';
     
-    const miniBar = document.getElementById('miniUtilBar');
-    miniBar.style.width = Math.min(100, miniUtil) + '%';
-    miniBar.style.background = statusColor(miniUtil);
-    
-    const skolBar = document.getElementById('skolUtilBar');
-    skolBar.style.width = Math.min(100, skolUtil) + '%';
-    skolBar.style.background = statusColor(skolUtil);
-    
-    const miniV = document.getElementById('miniVerdict');
-    miniV.textContent = statusText(miniUtil, MINI_PM_CAP);
-    miniV.className = 'util-verdict ' + statusClass(miniUtil);
-    
-    const skolV = document.getElementById('skolVerdict');
-    skolV.textContent = statusText(skolUtil, SKOL_PM_CAP);
-    skolV.className = 'util-verdict ' + statusClass(skolUtil);
+    // peak měsíc přepočtený na týdenní tempo (cca 4,3 týdne/měsíc)
+    document.getElementById('miniPerWeek').textContent = (miniPeak / 4.3).toFixed(1).replace('.', ',') + ' / týden';
+    document.getElementById('skolPerWeek').textContent = (skolPeak / 4.3).toFixed(1).replace('.', ',') + ' / týden';
     
     document.querySelectorAll('.preset-btn').forEach(btn => {
       const isActive = +btn.dataset.mini === miniFill && +btn.dataset.skol === skolFill && +btn.dataset.consult === consultPerMonth;
@@ -943,8 +1441,13 @@
     });
   }
   
-  ['miniFill', 'skolFill', 'consult'].forEach(id => {
-    document.getElementById(id).addEventListener('input', recompute);
+  function recomputeAll() {
+    recompute();
+    if (typeof renderVertikaly === 'function') renderVertikaly();
+  }
+  
+  ['miniFill', 'skolFill', 'consult', 'miniPrice', 'skolPrice', 'consultPrice', 'buffer', 'summer'].forEach(id => {
+    document.getElementById(id).addEventListener('input', recomputeAll);
   });
   
   document.querySelectorAll('.preset-btn').forEach(btn => {
@@ -952,11 +1455,212 @@
       document.getElementById('miniFill').value = btn.dataset.mini;
       document.getElementById('skolFill').value = btn.dataset.skol;
       document.getElementById('consult').value = btn.dataset.consult;
-      recompute();
+      recomputeAll();
     });
   });
   
   recompute();
+
+  /* ============================================ */
+  /* AUTUMN AKADEMIE CARD                         */
+  /* ============================================ */
+  const akademie = [
+    { name: 'AI Akademie pro marketingové manažer(k)y', tag: 'nová · Naty', tridy: 1, studenti: 40, cena: 17900, inTarget: true },
+    { name: 'Juniorní akademie', tag: 'Naty', tridy: 3, studenti: 47, cena: 17900, inTarget: false },
+    { name: 'Akademie sociálních sítí', tag: 'Bára · kapacita 90', tridy: 1, studenti: 90, cena: 19900, inTarget: false },
+    { name: 'Akademie pro marketingové manažer(k)y', tag: 'Naty', tridy: 1, studenti: 49, cena: 19900, inTarget: false }
+  ];
+
+  function renderAkademie() {
+    const body = document.getElementById('akadBody');
+    body.innerHTML = '';
+    let total = 0, inT = 0;
+    akademie.forEach((a, i) => {
+      const rev = a.tridy * a.studenti * a.cena;
+      total += rev;
+      if (a.inTarget) inT += rev;
+      const tr = document.createElement('tr');
+      if (a.inTarget) tr.className = 'akad-in-target';
+      tr.innerHTML =
+        '<td>' + a.name + '<span class="akad-tag">' + a.tag + '</span>' +
+          (a.inTarget ? '<span class="akad-badge">v 8,5 M cíli</span>' : '') + '</td>' +
+        '<td><input type="number" data-i="' + i + '" data-f="tridy" value="' + a.tridy + '" min="0" step="1"></td>' +
+        '<td><input type="number" data-i="' + i + '" data-f="studenti" value="' + a.studenti + '" min="0" step="1"></td>' +
+        '<td><input type="number" data-i="' + i + '" data-f="cena" value="' + a.cena + '" min="0" step="100"></td>' +
+        '<td class="akad-rev">' + fmt(Math.round(rev)) + ' Kč</td>';
+      body.appendChild(tr);
+    });
+    const trT = document.createElement('tr');
+    trT.style.borderTop = '1px solid var(--rule)';
+    trT.innerHTML =
+      '<td style="font-weight: 600;">Celkem</td><td></td><td></td><td></td>' +
+      '<td class="akad-rev" style="font-size: 17px;">' + fmt(Math.round(total)) + ' Kč</td>';
+    body.appendChild(trT);
+    document.getElementById('akadInTarget').textContent = fmt(Math.round(inT)) + ' Kč';
+    document.getElementById('akadSeparate').textContent = fmt(Math.round(total - inT)) + ' Kč';
+    document.getElementById('akadTotal').textContent = fmt(Math.round(total)) + ' Kč';
+    document.querySelectorAll('#akadBody input').forEach(inp => {
+      inp.addEventListener('input', () => {
+        akademie[+inp.dataset.i][inp.dataset.f] = +inp.value || 0;
+        renderAkademie();
+      });
+    });
+  }
+  renderAkademie();
+
+  /* ============================================ */
+  /* HIERARCHIE TÉMAT (ŠKO tiers)                 */
+  /* ============================================ */
+  const SKO_PRICE = 664;
+  const SKO_TARGET = 3840000;  // webináře = Škol 4,14M − 0,3M konzultace
+  const skoTiers = [
+    { id:'A', name:'A — Tahouni', desc:'Canva, FB/IG, LinkedIn, social strategie, copy zač., CapCut', themes:7, existing:7, fill:80, runs:4, strategic:false },
+    { id:'B', name:'B — Spolehliví', desc:'PPC zač., Meta kampaně, GA4 základy, event, storytelling, AI vizuály', themes:8, existing:8, fill:52, runs:3, strategic:false },
+    { id:'C', name:'C — Doplňkoví + varianty', desc:'SEO, UX, e-mail, B2B, merch, kreativa + nové varianty tahounů', themes:28, existing:13, fill:40, runs:2, strategic:false },
+    { id:'D', name:'D — Strategické', desc:'Account management, Právo — kategorijní sázka, ne objem', themes:4, existing:4, fill:18, runs:1, strategic:true }
+  ];
+
+  function renderTier() {
+    const body = document.getElementById('tierBody');
+    body.innerHTML = '';
+    let totT=0, totR=0, stratR=0, newTh=0;
+    skoTiers.forEach((t,i) => {
+      const term = Math.round(t.themes * t.runs);
+      const rev = term * t.fill * SKO_PRICE;
+      totT+=term; totR+=rev; newTh+=Math.max(0, t.themes - t.existing);
+      if (t.strategic) stratR+=rev;
+      const tr = document.createElement('tr');
+      tr.className = 'tier-'+t.id;
+      tr.innerHTML =
+        '<td>'+t.name+(t.strategic?'<span class="tier-badge">strategie</span>':'')+'<span class="tier-desc">'+t.desc+'</span></td>'+
+        '<td class="col-events"><input type="number" data-i="'+i+'" data-f="themes" value="'+t.themes+'" min="0" step="1"></td>'+
+        '<td class="col-target">'+t.existing+'</td>'+
+        '<td class="col-events"><input type="number" data-i="'+i+'" data-f="fill" value="'+t.fill+'" min="0" step="1"></td>'+
+        '<td class="col-events"><input type="number" data-i="'+i+'" data-f="runs" value="'+t.runs+'" min="0" step="0.5"></td>'+
+        '<td class="col-events">'+term+'</td>'+
+        '<td class="tier-rev">'+fmt(rev)+' Kč</td>';
+      body.appendChild(tr);
+    });
+    document.getElementById('tierTerm').textContent = totT;
+    document.getElementById('tierStrat').textContent = fmt(stratR)+' Kč';
+    document.getElementById('tierNew').textContent = newTh + ' ŠKO';
+    const diff = totR - SKO_TARGET;
+    const gapEl = document.getElementById('tierGap');
+    gapEl.textContent = fmt(totR)+' Kč';
+    gapEl.style.color = (diff>=0) ? 'var(--ok)' : (diff>-300000 ? 'var(--tight)' : 'var(--over)');
+    document.getElementById('hTotalTerm').textContent = totT;
+    document.getElementById('hTotalRev').textContent = fmt(totR)+' Kč';
+    document.getElementById('hNewThemes').textContent = newTh + ' ŠKO + ~16 MiA';
+    document.querySelectorAll('#tierBody input').forEach(inp => {
+      inp.addEventListener('input', () => {
+        skoTiers[+inp.dataset.i][inp.dataset.f] = +inp.value || 0;
+        renderTier();
+      });
+    });
+  }
+  renderTier();
+
+  /* ============================================ */
+  /* TAB SWITCHING                                */
+  /* ============================================ */
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+      window.scrollTo(0, 0);
+    });
+  });
+
+  /* ============================================ */
+  /* VERTIKÁLY PAGE                               */
+  /* ============================================ */
+  const VERT_TOTAL = 8500;
+  
+  const vertikaly = [
+    { name: 'Sociální sítě & content', y2025: 1068, y2026: 355, h2target: 1249 },
+    { name: 'Influencer marketing', y2025: 197, y2026: 20, h2target: 229 },
+    { name: 'Branding & account mgmt', y2025: 276, y2026: 63, h2target: 321 },
+    { name: 'Kampaně & strategie', y2025: 437, y2026: 169, h2target: 508 },
+    { name: 'Event management', y2025: 254, y2026: 244, h2target: 295 },
+    { name: 'PPC & performance', y2025: 535, y2026: 519, h2target: 622 },
+    { name: 'Analytika & data', y2025: 681, y2026: 280, h2target: 792 },
+    { name: 'AI v marketingu', y2025: 126, y2026: 326, h2target: 1393, highlight: true },
+    { name: 'UX & web', y2025: 171, y2026: 22, h2target: 199 },
+    { name: 'SEO', y2025: 87, y2026: 37, h2target: 101 },
+    { name: 'Video & multimédia', y2025: 133, y2026: 78, h2target: 155 },
+    { name: 'Copywriting & content', y2025: 832, y2026: 180, h2target: 968 },
+    { name: 'Grafika a vizuál', y2025: 473, y2026: 400, h2target: 550 },
+    { name: 'Osobní značka & freelance', y2025: 426, y2026: 0, h2target: 495 },
+    { name: 'Email marketing', y2025: 188, y2026: 121, h2target: 219 },
+    { name: 'Kreativita', y2025: 130, y2026: 52, h2target: 151 },
+    { name: 'Právo v marketingu', y2025: 99, y2026: 10, h2target: 115 },
+    { name: 'Niche (CX, Merch, Research, Trendy)', y2025: 114, y2026: 131, h2target: 138 },
+  ];
+
+  function fmtVert(n) {
+    return new Intl.NumberFormat('cs-CZ').format(Math.round(n));
+  }
+
+  function renderVertikaly() {
+    const body = document.getElementById('vertBody');
+    let sumK = 0, sumY = 0, sumY26 = 0;
+    vertikaly.forEach(v => { sumK += v.h2target; sumY += v.y2025; sumY26 += (v.y2026 || 0); });
+    
+    // event economics pulled from page 1
+    const miniFill = +document.getElementById('miniFill').value || 0;
+    const skolFill = +document.getElementById('skolFill').value || 0;
+    const miniPrice = +document.getElementById('miniPrice').value || 0;
+    const skolPrice = +document.getElementById('skolPrice').value || 0;
+    const miniRevPer = miniFill * miniPrice;
+    const skolRevPer = skolFill * skolPrice;
+    const MINI_SHARE = 3639 / 8500;
+    const SKOL_SHARE = 4139 / 8500;
+    
+    body.innerHTML = '';
+    vertikaly.forEach((v, i) => {
+      const tr = document.createElement('tr');
+      tr.className = v.highlight ? 'vert-highlight' : '';
+      const pctH2 = sumK > 0 ? (v.h2target / sumK * 100).toFixed(1) : '0';
+      const pct25 = sumY > 0 ? (v.y2025 / sumY * 100).toFixed(1) : '0';
+      const pct26 = sumY26 > 0 ? ((v.y2026 || 0) / sumY26 * 100).toFixed(1) : '0';
+      const miniKoh = miniRevPer > 0 ? Math.ceil(v.h2target * MINI_SHARE * 1000 / miniRevPer) : 0;
+      const skolTerm = skolRevPer > 0 ? Math.ceil(v.h2target * SKOL_SHARE * 1000 / skolRevPer) : 0;
+      tr.innerHTML =
+        '<td>' + v.name + (v.highlight ? ' <span style="color: var(--mini); font-size: 10px; letter-spacing: 0.04em; margin-left: 6px;">NOVÉ</span>' : '') + '</td>' +
+        '<td class="col-target">' + v.y2025 + ' k</td>' +
+        '<td class="col-target">' + pct25 + ' %</td>' +
+        '<td class="col-target">' + (v.y2026 || 0) + ' k</td>' +
+        '<td class="col-target">' + pct26 + ' %</td>' +
+        '<td class="col-events"><input type="number" data-idx="' + i + '" value="' + v.h2target + '" min="0" step="10"></td>' +
+        '<td class="col-target">' + pctH2 + ' %</td>' +
+        '<td class="col-events">' + miniKoh + '</td>' +
+        '<td class="col-events">' + skolTerm + '</td>';
+      body.appendChild(tr);
+    });
+    
+    // Summary
+    document.getElementById('vertSum').textContent = fmtVert(sumK * 1000) + ' Kč';
+    const diff = sumK - VERT_TOTAL;
+    const diffEl = document.getElementById('vertDiff');
+    const sign = diff > 0 ? '+' : '';
+    diffEl.textContent = sign + fmtVert(diff * 1000) + ' Kč';
+    if (Math.abs(diff) < 30) diffEl.style.color = 'var(--ok)';
+    else if (diff > 0) diffEl.style.color = 'var(--over)';
+    else diffEl.style.color = 'var(--tight)';
+    
+    // Input listeners
+    document.querySelectorAll('#vertBody input').forEach(inp => {
+      inp.addEventListener('input', () => {
+        const idx = +inp.dataset.idx;
+        vertikaly[idx].h2target = +inp.value || 0;
+        renderVertikaly();
+      });
+    });
+  }
+  
+  renderVertikaly();
 </script>
 </body>
 </html>
